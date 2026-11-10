@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MediHack Ending</title>
+  <style>
+    html, body { margin: 0; height: 100%; overflow: hidden; background: #000; color: #fff;
+                 font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+    canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; }
+    video { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+    #msg { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+           text-align: center; padding: 24px; font-size: 18px; background: #000; }
+    #msg.hidden { display: none; }
+  </style>
+</head>
+<body>
+  <video id="video" playsinline muted></video>
+  <canvas id="stage"></canvas>
+  <div id="msg">Loading…</div>
+  <script>
+    if (location.protocol === "file:") {
+      document.getElementById("msg").textContent =
+        "Open this page from GitHub Pages (or a local server), not by double-clicking the file.";
+    }
+  </script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
